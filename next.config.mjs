@@ -1,6 +1,5 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: "standalone",
+    output: process.env.BUILD_STANDALONE === "true" ? "standalone" : undefined,
     // ESLint is managed by CI/CD
     eslint: {
         ignoreDuringBuilds: true,

@@ -15,6 +15,7 @@ COPY . .
 # Environment variables for build time
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
+ENV BUILD_STANDALONE=true
 
 # Disable type checking during build for speed (validated in CI)
 RUN npm run build
