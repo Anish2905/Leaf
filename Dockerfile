@@ -2,8 +2,9 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-# Install dependencies for argon2 native build
-RUN apk add --no-cache python3 make g++
+# Install dependencies
+# (Argon2 removed, so native build deps not strictly needed, but keeping libc6-compat if needed)
+RUN apk add --no-cache libc6-compat
 
 # Expose port
 EXPOSE 3000
